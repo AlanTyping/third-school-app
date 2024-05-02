@@ -3,31 +3,100 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg: #001d3d;
+  --lightBg: #bfdbfe;
+  --lightBorder: #60a5fa;
+  --lightContrast: #004690;
+  --darkBg: #021321;
+
+  --proyectoLight: #f1af52;
+  --proyecto: #f08c00;
+  --proyectoDark: #844d00;
+
+  --comunicadoLight: #a5d8ff;
+  --comunicado: #46afff;
+  --comunicadoDark: #002c4d;
+
+  --diaSinClasesLight: #febfbf;
+  --diaSinClases: #fa6060;
+  --diaSinClasesDark: #360000;
+
+  --eventoLight: #f7a5ff;
+  --evento: #e95ef5;
+  --eventoDark: #602466;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  overflow-x: hidden;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--bg);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+img {
+  max-width: 30000px;
+}
+
+* {
+  /* scrollbar-color: #5b73ac #001d3d; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ::-webkit-scrollbar-thumb {
+    background: #5b73ac;
+    -webkit-box-shadow: inset 0 0 6px rgba(243, 243, 243, 0.3);
+}
+
+::-webkit-scrollbar {
+    background-color: #001d3d;
+} */
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.w {
+  width: 100%;
+}
+
+.h {
+  height: 100vh;
+}
+
+@media (width > 1436px) {
+
+  p,
+  span,
+  h3 {
+    font-size: 1.35rem;
   }
+}
+
+.event-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 500px;
+  padding-bottom: 25px;
+}
+
+.shadow-bottom {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.event-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.691);
+}
+
+#header {
+  background-image: linear-gradient(to top, #001d3d00, #001d3d4e, #001d3d83, #001d3da3, #001d3dc0);
 }
