@@ -18,7 +18,7 @@ export const Carousel = ({ children: slides, autoSlide = false, autoSlideInterva
 
   useEffect(() => {
     const handleResize = () => {
-      if (width >= 766) {
+      if (width >= 640) {
         setTransformValue(`translateX(-${curr * 100}%)`);
       } else {
         setTransformValue(`translateX(-${curr * 220}%)`);
